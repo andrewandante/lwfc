@@ -13,7 +13,7 @@ class CreateTeamModel extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('manager_name');
             $table->text('name');
@@ -30,6 +30,6 @@ class CreateTeamModel extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team');
+        Schema::dropIfExists('teams');
     }
 }

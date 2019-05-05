@@ -12,6 +12,8 @@ class Team extends Model
   public const FIELD_FPL_ID = 'fpl_id';
   public const FIELD_POINTS = 'points';
 
+  protected $table = 'teams';
+
   public function getName(): string
   {
     return $this->getAttribute(self::FIELD_NAME);
