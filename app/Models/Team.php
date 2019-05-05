@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Team extends Model
 {
@@ -12,7 +13,14 @@ class Team extends Model
   public const FIELD_FPL_ID = 'fpl_id';
   public const FIELD_POINTS = 'points';
 
+  public const FIELD_REF = 'team_id';
+
   protected $table = 'teams';
+
+  public function league(): BelongsTo
+  {
+    return $this->belongsTo(League::class);
+  }
 
   public function getName(): string
   {
